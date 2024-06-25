@@ -31,6 +31,11 @@
     position: relative;
 }
 
+.form_control textarea{
+    padding: 8px;
+}
+
+
 .form_control input{
     height: 40px;
     padding: 0 8px;
