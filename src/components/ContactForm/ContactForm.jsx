@@ -9,6 +9,7 @@ const ContactForm = () => {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [text, setText] = useState();
+  const [isOpen, setIsOpen] = useState(false);
   
   const onSubmit = (event)=>{
     event.preventDefault();
@@ -21,6 +22,12 @@ const ContactForm = () => {
     // console.log("email", event.target[1].value);
     // console.log("text", event.target[2].value);
   }
+
+  //showing in UI
+  function toggle() {
+    setIsOpen((isOpen) => !isOpen);
+  }
+
 
   // show call in log
   const onViaCallSubmit = ()=>{
@@ -70,13 +77,13 @@ const ContactForm = () => {
                 {display: "flex",
                 justifyContent:"end"
                 }}>
-                <Button 
+                <Button  onClick={toggle}
                   text="Submit" 
                 />
               </div>
 
               <div>
-                {name + " " + email + " " + text}
+                {isOpen ? name + " " + email + " " + text : " "}
               </div>  
             </form>
         </div>
